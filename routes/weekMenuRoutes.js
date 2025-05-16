@@ -21,6 +21,12 @@ router.post("/", authenticateToken, async (req, res) => {
         await newWeekMenu.save();
         res.status(201).json(newWeekMenu);
     } catch (error) {
+        if (error.code === 11000) {  // 🔹 Mongoose error för duplicerad unik nyckel
+            return res.status(400).json({ error: `Lunchmenyn för vecka ${error.keyValue.weekNumber} finns redan inlagd!` });
+        }
+        if (error.name === "ValidationError") {
+            return res.status(400).json({ error: "Valideringsfel: Alla obligatoriska fält måste fyllas i!" });
+        }
         res.status(400).json({ error: "Fel vid skapande av veckomeny!" });
     }
 });

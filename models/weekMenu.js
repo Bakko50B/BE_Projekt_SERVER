@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const weekMenuSchema = new mongoose.Schema({
-    weekNumber: { type: Number, required: true },
+    weekNumber: { type: Number, required: true, unique: true     },
     days: [{
         day: { type: String, enum: ["Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag"], required: true },
         dishes: [{ type: String, required: true }] 
