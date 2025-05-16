@@ -4,13 +4,14 @@ Det mesta är förändrat, men skalet var en bra start trots det.
 Koden har sitt urrsprung från kurslitteratur (video) och har delvis reviderats.  
 
 ## Installation  
-Kör:   ``
-**npm install**  
-``
+Kör:     
+```
+npm install  
+```
 Starta sedan applikationen med:   
-``
-**npm run serve**  
-``
+```
+npm run serve
+```
 ## Routes  
 Users     
 * POST:     http://localhost:3000/users/register    -> Skapa en användare  
