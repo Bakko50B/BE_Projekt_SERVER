@@ -23,6 +23,12 @@ router.post("/", authenticateToken, async (req, res) => {
         await newDish.save();
         res.status(201).json(newDish);
     } catch (error) {
+        if (error.name === "ValidationError") {
+            return res.status(400).json({ error: "Valideringsfel: Kontrollera att alla fält är korrekt ifyllda!" });
+        }
+        if (error.code === 11000) {
+            return res.status(400).json({ error: `Rätten "${error.keyValue.name}" finns redan!` });
+        }
         console.error("Fel vid skapande av rätt:", error); // Logga felet!
         res.status(400).json({ error: error.message });
     }
