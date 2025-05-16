@@ -13,11 +13,13 @@ Users
 * POST:     http://localhost:3000/users/register    -> Skapa en användare  
 * POST:     http://localhost:3000/users/login 		-> Inlogg för användare  
 * GET:      http://localhost:3000/users/protected   -> Skyddat område      
+
 Dishes  
 * GET:      http://localhost:3000/dishes            -> Se alla rätter
 * POST:     http://localhost:3000/dishes            -> Skapa ny rätt
 * PUT:      http://localhost:3000/dishes/:id        -> Uppdatera en rätt     
-* DELETE    http://localhost:3000/dishes/:id        -> Tar bort en rätt
+* DELETE    http://localhost:3000/dishes/:id        -> Tar bort en rätt  
+
 Lunchmeny  
 * GET:      http://localhost:3000/weekmenus         -> Hämta veckomeny för luncher
 * POST:     http://localhost:3000/weekmenus         -> Skapa ny veckomeny
