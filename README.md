@@ -20,15 +20,17 @@ Users
 
 Dishes  
 * GET:      http://localhost:3000/dishes            -> Se alla rätter
-* POST:     http://localhost:3000/dishes            -> Skapa ny rätt
-* PUT:      http://localhost:3000/dishes/:id        -> Uppdatera en rätt     
-* DELETE    http://localhost:3000/dishes/:id        -> Tar bort en rätt  
+* GET:      http://localhost:3000/dishes/:id        -> Se en rätt               (skyddad, kräver autentisering)
+* POST:     http://localhost:3000/dishes            -> Skapa ny rätt            (skyddad, kräver autentisering)
+* PUT:      http://localhost:3000/dishes/:id        -> Uppdatera en rätt        (skyddad, kräver autentisering)  
+* DELETE    http://localhost:3000/dishes/:id        -> Tar bort en rätt         (skyddad, kräver autentisering)
 
 Lunchmeny  
-* GET:      http://localhost:3000/weekmenus         -> Hämta veckomeny för luncher
-* POST:     http://localhost:3000/weekmenus         -> Skapa ny veckomeny
-* PUT:      http://localhost:3000/weekmenus/:id     -> Uppdatera en veckomeny
-* DELETE:   http://localhost:3000/weekmenus/:id     -> radera en veckomeny 
+* GET:      http://localhost:3000/weekmenus         -> Hämta alla veckomenyer   
+* GET:      http://localhsot:3000/weekmenus/:id     -> Hämta en veckomeny       (skyddad, kräver autentisering)
+* POST:     http://localhost:3000/weekmenus         -> Skapa ny veckomeny       (skyddad, kräver autentisering)
+* PUT:      http://localhost:3000/weekmenus/:id     -> Uppdatera en veckomeny   (skyddad, kräver autentisering)
+* DELETE:   http://localhost:3000/weekmenus/:id     -> radera en veckomeny      (skyddad, kräver autentisering)
 
 Om någon annan route än ovan anropas ges ett felmeddelande som svar.  
 

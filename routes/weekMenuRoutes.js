@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Get med unikt id
+router.get("/:id", authenticateToken, async (req, res) => {
+    try {
+        const weekMenu = await WeekMenu.findById(req.params.id);
+        if (!weekMenu) {
+            return res.status(404).json({ error: "Veckomenyn hittades inte!" });
+        }
+        res.status(200).json(weekMenu);
+    } catch (error) {
+        res.status(400).json({ error: "Felaktigt ID-format!" });
+    }
+});
+
 // POST - Skapa en ny veckomeny (Skyddad)
 router.post("/", authenticateToken, async (req, res) => {
     try {

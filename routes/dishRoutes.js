@@ -13,6 +13,19 @@ router.get("/", async (req, res) => {
     }
 });
 
+// Dish med unikt id
+router.get("/:id", authenticateToken, async (req, res) => {
+    try {
+        const dish = await Dish.findById(req.params.id);
+        if (!dish) {
+            return res.status(404).json({ error: "Rätten hittades inte!" });
+        }
+        res.status(200).json(dish);
+    } catch (error) {
+        res.status(400).json({ error: "Felaktigt ID-format!" });
+    }
+});
+
 // POST - Skapa en ny rätt (Skyddad)
 router.post("/", authenticateToken, async (req, res) => {
     try {
