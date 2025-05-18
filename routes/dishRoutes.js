@@ -31,7 +31,7 @@ router.post("/", authenticateToken, async (req, res) => {
     try {
         console.log("Incoming data:", req.body);
         const { name, description, category, price } = req.body;
-        console.log("Category before saving:", category);
+        // console.log("Category before saving:", category);
         const newDish = new Dish({ name, description, category, price });
         await newDish.save();
         res.status(201).json(newDish);
