@@ -30,9 +30,9 @@ router.get("/:id", authenticateToken, async (req, res) => {
 router.post("/", authenticateToken, async (req, res) => {
     try {
         console.log("Incoming data:", req.body);
-        const { name, description, category, price } = req.body;
+        const { name, description, category, price, typ, alkoholhalt } = req.body;
         // console.log("Category before saving:", category);
-        const newDish = new Dish({ name, description, category, price });
+        const newDish = new Dish({ name, description, category, price, typ, alkoholhalt});
         await newDish.save();
         res.status(201).json(newDish);
     } catch (error) {
