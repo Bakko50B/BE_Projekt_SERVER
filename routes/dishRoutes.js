@@ -29,6 +29,7 @@ router.get("/:id", authenticateToken, async (req, res) => {
 // POST - Skapa en ny rätt (Skyddad)
 router.post("/", authenticateToken, async (req, res) => {
     try {
+        
         console.log("Incoming data:", req.body);
         const { name, description, category, price, typ, alkoholhalt } = req.body;
         // console.log("Category before saving:", category);

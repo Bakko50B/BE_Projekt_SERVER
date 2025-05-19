@@ -6,7 +6,7 @@ const dishSchema = new mongoose.Schema({
     category: { type: String, enum: ["förrätt", "huvudrätt", "efterrätt", "dryck"], required: true },
     price: { type: Number, required: true },
     typ: {type: String},
-    alkoholhalt: {type: Number}
+    alkoholhalt: {type: Number, default: 0}
 }, { timestamps: true }); // Hanterar createdAt & updatedAt automatiskt
 
 const Dish = mongoose.model("Dish", dishSchema);
