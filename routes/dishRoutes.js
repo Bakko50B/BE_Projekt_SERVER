@@ -9,7 +9,7 @@ router.get("/", async (req, res) => {
         const dishes = await Dish.find();
         res.status(200).json(dishes);
     } catch (error) {
-        res.status(500).json({ error: "Serverfel vid hämtning av rätter!" });
+        res.status(500).json({ error: "Serverfel vid hämtning av rätter!", details: error.message });
     }
 });
 
@@ -22,11 +22,14 @@ router.get("/:id", authenticateToken, async (req, res) => {
         }
         res.status(200).json(dish);
     } catch (error) {
-        res.status(400).json({ error: "Felaktigt ID-format!" });
+    if (error.name === "CastError") {
+        return res.status(400).json({ error: "Felaktigt ID-format!" });
     }
+    res.status(500).json({ error: "Serverfel vid hämtning av rätt!", details: error.message });
+}
 });
 
-// POST - Skapa en ny rätt (Skyddad)
+// POST - Skapa en ny rätt (Skyddad)    
 router.post("/", authenticateToken, async (req, res) => {
     try {
         

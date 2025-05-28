@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const WeekMenu = require("../models/WeekMenu");
+const WeekMenu = require("../models/weekMenu");
 const authenticateToken = require("../middleware/authMiddleware");
 
 // GET - Alla veckomenyer (Öppen)
