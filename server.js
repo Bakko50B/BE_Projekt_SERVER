@@ -8,6 +8,9 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes'); // Importera authRoutes
 const dishRoutes = require("./routes/dishRoutes");
 const weekMenuRoutes = require("./routes/weekMenuRoutes");
+const bookingRoutes = require("./routes/bookings");
+
+
 require('dotenv').config(); // Ladda miljövariabler från .env-filen
 
 const port = process.env.PORT || 3000; // Använd port från .env eller standardport 3000
@@ -24,6 +27,7 @@ app.use(cors());
 /** ------ Rutter (Routes) ------ */
 app.use("/dishes", dishRoutes);
 app.use("/weekmenus", weekMenuRoutes);
+app.use("/bookings", bookingRoutes);
 app.use("/users", authRoutes); // Använd authRoutes för /api/auth
 
 // Om ingen av ovanstående rutter fångar upp anropet
