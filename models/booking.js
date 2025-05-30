@@ -1,3 +1,7 @@
+/**
+ * Mongooseschema för bordsbokningar
+ */
+
 const mongoose = require("mongoose");
 
 const bookingSchema = new mongoose.Schema({
@@ -7,7 +11,7 @@ const bookingSchema = new mongoose.Schema({
     time: { type: String, required: true },     // (ex. "18:00")
     email: { type: String, required: true },    // E-postadress för kontakt
     phone: { type: String, required: true },    // Telefonnummer för kontakt
-}, { timestamps: true }); // Skapar automatiska tidsstämplar
+}, { timestamps: true });                       // Skapar automatiska tidsstämplar
 
 const Booking = mongoose.model("Booking", bookingSchema);
 module.exports = Booking;

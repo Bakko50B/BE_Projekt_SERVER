@@ -1,3 +1,7 @@
+/**
+ * Mongooseschema för veckolunchmenyer
+ */
+
 const mongoose = require("mongoose");
 
 const weekMenuSchema = new mongoose.Schema({

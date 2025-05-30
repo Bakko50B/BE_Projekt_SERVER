@@ -1,3 +1,7 @@
+/**
+ * Mongooseschema för Rätter
+ */
+
 const mongoose = require("mongoose");
 
 const dishSchema = new mongoose.Schema({
@@ -7,7 +11,7 @@ const dishSchema = new mongoose.Schema({
     price: { type: Number, required: true },
     typ: {type: String},
     alkoholhalt: {type: Number, default: 0}
-}, { timestamps: true }); // Hanterar createdAt & updatedAt automatiskt
+}, { timestamps: true });                                           // Hanterar createdAt & updatedAt automatiskt
 
 const Dish = mongoose.model("Dish", dishSchema);
 module.exports = Dish;

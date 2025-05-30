@@ -1,10 +1,11 @@
 /**
  * Skal till ett REST-API med Nodejs och Express
  * Av Mattias Dahlgren, mattias.dahlgren@miun.se
+ * Förändrat av Torbjörn Lundberg tolu2403@student.miun.se
  */
 const express = require('express');
 const cors = require('cors');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes'); // Importera authRoutes
 const dishRoutes = require("./routes/dishRoutes");
 const weekMenuRoutes = require("./routes/weekMenuRoutes");

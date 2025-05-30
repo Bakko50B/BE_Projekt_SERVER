@@ -1,3 +1,6 @@
+/**
+ * Rutter för Rätter
+ */
 const express = require('express');
 const router = express.Router();
 const Dish = require("../models/Dish");
@@ -14,6 +17,7 @@ router.get("/", async (req, res) => {
 });
 
 // Dish med unikt id
+// get
 router.get("/:id", authenticateToken, async (req, res) => {
     try {
         const dish = await Dish.findById(req.params.id);

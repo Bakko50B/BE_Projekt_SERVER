@@ -1,3 +1,8 @@
+/**
+ * Mongooseschema för användare
+ * med metoder
+ */
+
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
