@@ -30,9 +30,20 @@ Lunchmeny
 * GET:      http://localhsot:3000/weekmenus/:id     -> Hämta en veckomeny       (skyddad, kräver autentisering)
 * POST:     http://localhost:3000/weekmenus         -> Skapa ny veckomeny       (skyddad, kräver autentisering)
 * PUT:      http://localhost:3000/weekmenus/:id     -> Uppdatera en veckomeny   (skyddad, kräver autentisering)
-* DELETE:   http://localhost:3000/weekmenus/:id     -> radera en veckomeny      (skyddad, kräver autentisering)
+* DELETE:   http://localhost:3000/weekmenus/:id     -> radera en veckomeny      (skyddad, kräver autentisering)  
+
+Bokningar  
+* GET       http://localhost:3000/bookings          -> Hämta alla bokningar   
+* POST      http://localhost:3000/bookings          -> Skapa ny bokning           
+* DELETE    http://localhost:3000/bookings/:id      -> Radera en bokning        (skyddad, kräver autentisering)                 
 
 Om någon annan route än ovan anropas ges ett felmeddelande som svar.  
+
+## Extra
+Uppgiften krävde två olika huvudändpointer  
+En för autentisering och en för att hantera menyer (någon typ) på webbplatsen.  
+  
+Jag har valt att göra sammanlagt tre huvudrutter, utöver den som är ett grundkrav (att hantera användare).
 
 ## Autentisering
 Skyddade routes kräver autentisering med **Bearer Token**.  
@@ -45,5 +56,8 @@ Exempelvis:
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ## Av  
-Torbjörn Lundberg, tolu2403@student.miun.se   
+Torbjörn Lundberg, tolu2403@student.miun.se     
+Mattias Dahlgren, mattias.dahlgren@miun.se  
+
+
 
