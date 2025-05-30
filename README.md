@@ -40,7 +40,7 @@ Bokningar
 Om någon annan route än ovan anropas ges ett felmeddelande som svar.  
 
 ## Extra
-Uppgiften krävde två olika huvudändpointer  
+Uppgiften krävde två olika huvudrutter 
 En för autentisering och en för att hantera menyer (någon typ) på webbplatsen.  
   
 Jag har valt att göra sammanlagt tre huvudrutter, utöver den som är ett grundkrav (att hantera användare).
@@ -56,7 +56,8 @@ Exempelvis:
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ## Av  
-Torbjörn Lundberg, tolu2403@student.miun.se     
+Torbjörn Lundberg, tolu2403@student.miun.se   
+efter en grund från    
 Mattias Dahlgren, mattias.dahlgren@miun.se  
 
 
