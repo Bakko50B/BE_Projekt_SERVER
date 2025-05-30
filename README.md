@@ -40,7 +40,7 @@ Bokningar
 Om någon annan route än ovan anropas ges ett felmeddelande som svar.  
 
 ## Extra
-Uppgiften krävde två olika huvudrutter 
+Uppgiften krävde två olika huvudrutter   
 En för autentisering och en för att hantera menyer (någon typ) på webbplatsen.  
   
 Jag har valt att göra sammanlagt tre huvudrutter, utöver den som är ett grundkrav (att hantera användare).
