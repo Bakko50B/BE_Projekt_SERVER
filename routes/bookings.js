@@ -45,7 +45,6 @@ router.get("/", async (req, res) => {
 //     }
 // });
 
-
 router.post("/", async (req, res) => {
     try {
         const newBooking = new Booking(req.body);
