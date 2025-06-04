@@ -28,6 +28,24 @@ router.get("/", async (req, res) => {
 //     }
 // });
 
+// router.post("/", async (req, res) => {
+//     try {
+//         const newBooking = new Booking(req.body);
+//         await newBooking.save();
+//         res.status(201).json(newBooking);
+//     } catch (error) {
+//         if (error.name === "ValidationError") {
+//             let errors = {};
+//             Object.keys(error.errors).forEach(field => {
+//                 errors[field] = error.errors[field].message; // Plocka ut varje fältfel
+//             });
+//             return res.status(400).json({ error: "Valideringsfel!", details: errors });
+//         }
+//         res.status(500).json({ error: "Serverfel vid skapande av bokning!", details: error.message });
+//     }
+// });
+
+
 router.post("/", async (req, res) => {
     try {
         const newBooking = new Booking(req.body);
@@ -44,6 +62,7 @@ router.post("/", async (req, res) => {
         res.status(500).json({ error: "Serverfel vid skapande av bokning!", details: error.message });
     }
 });
+
 
 
 // DELETE - Ta bort en bokning (Skyddad)
