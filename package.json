@@ -7,7 +7,7 @@
     "serve": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Mattias Dahlgren",
+  "author": "Torbjörn Lundberg",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.1",
