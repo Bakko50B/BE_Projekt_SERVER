@@ -1,7 +1,7 @@
 # API för Projektet i Backendkursen
 ## med autentisering hämtat från Moment 4   
 Det mesta är förändrat, men skalet var en bra start trots det.  
-Koden har sitt urrsprung från kurslitteratur (video) och har delvis reviderats.  
+Koden har sitt ursprung från kurslitteratur (video) och har delvis reviderats.  
 
 ## Installation  
 Kör:     
@@ -43,7 +43,7 @@ Om någon annan route än ovan anropas ges ett felmeddelande som svar.
 Uppgiften krävde två olika huvudrutter   
 En för autentisering och en för att hantera menyer (någon typ) på webbplatsen.  
   
-Jag har valt att göra sammanlagt tre huvudrutter, utöver den som är ett grundkrav (att hantera användare).
+Jag har valt att göra sammanlagt tre huvudrutter.  
 
 ## Autentisering
 Skyddade routes kräver autentisering med **Bearer Token**.  
