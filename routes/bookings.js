@@ -17,16 +17,34 @@ router.get("/", async (req, res) => {
 });
 
 // POST - Skapa en ny bokning (Öppen)
+// router.post("/", async (req, res) => {
+//     try {
+//         const { name, guests, date, time, email, phone } = req.body;
+//         const newBooking = new Booking({ name, guests, date, time, email, phone });
+//         await newBooking.save();
+//         res.status(201).json(newBooking);
+//     } catch (error) {
+//         res.status(400).json({ error: "Fel vid skapande av bokning!", details: error.message });
+//     }
+// });
+
 router.post("/", async (req, res) => {
     try {
-        const { name, guests, date, time, email, phone } = req.body;
-        const newBooking = new Booking({ name, guests, date, time, email, phone });
+        const newBooking = new Booking(req.body);
         await newBooking.save();
         res.status(201).json(newBooking);
     } catch (error) {
-        res.status(400).json({ error: "Fel vid skapande av bokning!", details: error.message });
+        if (error.name === "ValidationError") {
+            let errors = {};
+            Object.keys(error.errors).forEach(field => {
+                errors[field] = error.errors[field].message; // Plocka ut varje fältfel
+            });
+            return res.status(400).json({ error: "Valideringsfel!", details: errors });
+        }
+        res.status(500).json({ error: "Serverfel vid skapande av bokning!", details: error.message });
     }
 });
+
 
 // DELETE - Ta bort en bokning (Skyddad)
 router.delete("/:id", authenticateToken, async (req, res) => {
